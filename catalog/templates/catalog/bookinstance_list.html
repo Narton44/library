@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Список книг</h1>
+
+    {% if bookinstance_list %}
+    <ol>
+
+      {% for book in bookinstance_list %}
+      <li>
+        <h3>{{ book.name }} ({{book.author}})</h3>
+      </li>
+      {% endfor %}
+
+    </ol>
+    {% else %}
+      <p>Пока в библиотеке нет книг.</p>
+    {% endif %}
+{% endblock %}

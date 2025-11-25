@@ -1,11 +1,20 @@
-    <!DOCTYPE html>
-    <html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body>
-        
-    </body>
-    </html>
+{% extends "base_generic.html" %}
+
+{% block title %}<title>Big Library</title>{% endblock %}
+
+{% block content %}
+{% load static %}
+<img
+  src="{% static 'catalog/images/library.jpg' %}"
+  alt="My image"
+  style="width:555px;height:540px;" />
+
+<h1>Библиотека</h1>
+
+  <p>В настоящее время в библиотеке есть:</p>
+  <ul>
+    <li><strong>Книг:</strong> {{ num_books }}</li>
+    <li><strong>Авторов:</strong> {{ num_authors }}</li>
+  </ul>
+
+{% endblock %}
