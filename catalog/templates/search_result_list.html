@@ -1,0 +1,32 @@
+{% extends "base_generic.html" %}
+
+{% block title %}<title>Библиотека  Ватикана</title>{% endblock %}
+
+{% block content %}
+<h1>Результаты поиска</h1>
+
+{% if object_list %}
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">№</th>
+        <th scope="col">Название</th>
+        <th scope="col">Автор</th>
+        <th scope="col">Количество</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for book in object_list %}
+        <tr>
+          <th scope="row">{{ forloop.counter }}</th>
+          <td>{{ book.name }}</td>
+          <td>{{ book.author }}</td>
+          <td>{{ book.quantity }} шт.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+    <p>По Вашему запросу в библиотеке нет книг.</p>
+  {% endif %}
+{% endblock %}
