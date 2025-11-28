@@ -4,13 +4,19 @@ from . import views
 urlpatterns = [
     path(
         '',
-        views.BookInstanceList.as_view(),
+        views.BookInstanceListView.as_view(),
         name='index'
         ),
 
     path(
-        'books/',
+        'search/',
         views.BookInstanceSearchListView.as_view(),
-        name='books' # имя для ссылок, когда мы делаем "кнопки" в шаблонах
+        name='books' # имя для ссылок, которые мы делаем из текста в шаблонах
+        ),
+    
+    path(
+        'create/',
+        views.BookInstanceCreateView.as_view(),
+        name='book_create'
         ),
 ]

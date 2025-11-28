@@ -3,31 +3,31 @@
 {% block title %}<title>Библиотека  Ватикана</title>{% endblock %}
 
 {% block content %}
-
-    <font size="5">Поик книги по автору:</font>
-    <form action="{% url 'books' %}" method="get">
-    <input name="q" type="text" placeholder="Search...">
-    </form>
-
 <h1>Библиотека</h1>
+
+<font size="5">Поик книги по автору:</font>
+<form action="{% url 'books' %}" method="get">
+<input name="q" type="text" placeholder="Search...">
+<button type="submit">Найти</button>
+</form>
 
   {% if object_list %}
   <table class="table table-striped">
     <thead>
       <tr>
-        <th scope="col">№</th>
-        <th scope="col">Название</th>
-        <th scope="col">Автор</th>
-        <th scope="col">Количество</th>
+        <th scope="col"><font size=5>№</font></th>
+        <th scope="col"><font size=5>Название</font></th>
+        <th scope="col"><font size=5>Автор</font></th>
+        <th scope="col"><font size=5>Количество</font></th>
       </tr>
     </thead>
     <tbody>
       {% for book in object_list %}
         <tr>
-          <th scope="row">{{ forloop.counter }}</th>
-          <td>{{ book.name }}</td>
-          <td>{{ book.author }}</td>
-          <td>{{ book.quantity }} шт.</td>
+          <th scope="row"><font size=4>{{ forloop.counter }}</font></th>
+          <td><font size=5>{{ book.name }}</font></td>
+          <td><font size=5>{{ book.author }}</font></td>
+          <td><font size=5>{{ book.quantity }} шт.</font></td>
         </tr>
       {% endfor %}
     </tbody>

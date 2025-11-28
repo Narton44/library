@@ -9,10 +9,9 @@ class BookInstance(models.Model):
         max_length=30
     )
 
-    author = models.ForeignKey(
-        'Author',
-        on_delete=models.PROTECT,
-        
+    author = models.CharField(
+        verbose_name='автор',
+        max_length=30,
     )
 
     quantity = models.PositiveSmallIntegerField(
@@ -32,20 +31,3 @@ class BookInstance(models.Model):
      
     def __str__(self):
         return self.name
-
-
-
-
-class Author(models.Model):
-    name = models.CharField(
-        verbose_name='имя',
-        max_length=30,
-    )
-
-    def __str__(self):
-        return self.name
-    
-    class Meta:
-        verbose_name = 'Автор'
-        verbose_name_plural = 'Авторы'
-        ordering = ["name"]

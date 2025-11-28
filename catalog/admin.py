@@ -1,5 +1,4 @@
 from django.contrib import admin
-from .models import BookInstance, Author
+from .models import BookInstance
 
 admin.site.register(BookInstance)
-admin.site.register(Author)
