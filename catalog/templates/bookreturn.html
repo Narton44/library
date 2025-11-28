@@ -1,0 +1,43 @@
+{% extends "base_generic.html" %}
+
+{% block title %}<title>Библиотека Ватикана</title>{% endblock %}
+
+{% block content %}
+
+<h1>Возврат книги</h1>
+
+<form method="post">
+    {% csrf_token %}
+    
+    
+    
+    {% for field in form %}
+    <div>
+        <label for="{{ field.id_for_label }}">
+            {{ field.label }}
+            {% if field.field.required %}*{% endif %}
+        </label>
+
+        {{ field }}
+
+        {% if field.help_text %}
+        <div>{{ field.help_text }}</div>
+        {% endif %}
+
+        {% if field.errors %}
+        <div>
+            {% for error in field.errors %}
+                {{ error }}
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+    {% endfor %}
+
+    <div>
+        <button type="submit">Вернуть книгу</button>
+        <a href="{% url 'index' %}">Отмена</a>
+    </div>
+</form>
+
+{% endblock %}

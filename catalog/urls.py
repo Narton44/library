@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 
+
 urlpatterns = [
     path(
         '',
@@ -18,5 +19,17 @@ urlpatterns = [
         'create/',
         views.BookInstanceCreateView.as_view(),
         name='book_create'
+        ),
+
+    path(
+        'loan/',
+        views.BookInstanceLoanView.as_view(),
+        name='book_loan'
+        ),
+
+    path(
+        'return/',
+        views.BookInstanceReturnView.as_view(),
+        name='book_return'
         ),
 ]

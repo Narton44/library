@@ -9,8 +9,8 @@
       <ul class="sidebar-nav">
         <li><a href="{% url 'index' %}"><font size=4>Главная</font></a></li>
         <li><a href="{% url 'book_create' %}"><font size=4>Создать книгу</font></a></li>
-        <li><a href=""><font size=4>Выдать книгу</font></a></li>
-        <li><a href=""><font size=4>Вернуть книгу</font></a></li>
+        <li><a href="{% url 'book_loan' %}"><font size=4>Выдать книгу</font></a></li>
+        <li><a href="{% url 'book_return' %}"><font size=4>Вернуть книгу</font></a></li>
       </ul>
     {% endblock %}
     {% block content %}{% endblock %}  

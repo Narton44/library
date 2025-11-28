@@ -19,15 +19,10 @@ class BookInstance(models.Model):
 
     )
 
+    def __str__(self):
+        return self.name
+
     class Meta:
         verbose_name = 'Книга'
         verbose_name_plural = 'Книги'
         ordering = ["name"]
-
-    # Methods
-    def get_absolute_url(self):
-        """Возвращает URL-адрес для доступа к определенному экземпляру MyModelName."""
-        return reverse('model-detail-view', args=[str(self.id)])
-     
-    def __str__(self):
-        return self.name
